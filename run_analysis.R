@@ -70,7 +70,7 @@ run_analysis <- function(){
   ## Create a second, independent tidy data set with the average of each variable for each activity and each subject
   tidy_Dataset2 <- tidy_Dataset1 %>% group_by(subject_ID, activity_ID, activity_Name) %>% summarise_each(funs(mean))
   
-  ## Write the Tidy datasets to csv files
-  write.csv(tidy_Dataset1, "UCI_HAR_Tidy_Dataset_1.csv", row.names = FALSE)
-  write.csv(tidy_Dataset2, "UCI_HAR_Tidy_Dataset_2.csv", row.names = FALSE)
+  ## Write the Tidy datasets to txt files
+  write.table(tidy_Dataset1, "UCI_HAR_Tidy_Dataset_1.txt", sep = ",", row.names = FALSE)
+  write.table(tidy_Dataset2, "UCI_HAR_Tidy_Dataset_2.txt", sep = ",", row.names = FALSE)
 }
